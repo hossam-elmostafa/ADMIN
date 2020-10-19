@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADMN", "ADMN.vcproj", "{F9ACA9F1-BA82-4279-A058-00B847190FC7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADMNTest", "..\ADMN.exe\ADMNTest.vcproj", "{9CB5347B-454E-43EA-A7E5-6C5E80C8FDBA}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = ADMN.vcproj
+		SccProjectName0 = \u0022$/VC/ADMNPROJECT/ADMN.DLL\u0022,\u0020NPBAAAAA
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = ..\\ADMN.exe\\ADMNTest.vcproj
+		SccProjectName1 = \u0022$/VC/ADMNPROJECT/ADMN.EXE\u0022,\u0020PPBAAAAA
+		SccLocalPath1 = ..\\ADMN.exe
+		CanCheckoutShared = true
+		SccProjectName2 = \u0022$/VC/ADMNPROJECT/ADMN.DLL\u0022,\u0020YPBAAAAA
+		SccLocalPath2 = .
+		SccProvider2 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release MinDependency|Win32 = Release MinDependency|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9ACA9F1-BA82-4279-A058-00B847190FC7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F9ACA9F1-BA82-4279-A058-00B847190FC7}.Debug|Win32.Build.0 = Debug|Win32
+		{F9ACA9F1-BA82-4279-A058-00B847190FC7}.Release MinDependency|Win32.ActiveCfg = Release MinDependency|Win32
+		{F9ACA9F1-BA82-4279-A058-00B847190FC7}.Release MinDependency|Win32.Build.0 = Release MinDependency|Win32
+		{F9ACA9F1-BA82-4279-A058-00B847190FC7}.Release|Win32.ActiveCfg = Release MinDependency|Win32
+		{F9ACA9F1-BA82-4279-A058-00B847190FC7}.Release|Win32.Build.0 = Release MinDependency|Win32
+		{9CB5347B-454E-43EA-A7E5-6C5E80C8FDBA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9CB5347B-454E-43EA-A7E5-6C5E80C8FDBA}.Debug|Win32.Build.0 = Debug|Win32
+		{9CB5347B-454E-43EA-A7E5-6C5E80C8FDBA}.Release MinDependency|Win32.ActiveCfg = Release|Win32
+		{9CB5347B-454E-43EA-A7E5-6C5E80C8FDBA}.Release MinDependency|Win32.Build.0 = Release|Win32
+		{9CB5347B-454E-43EA-A7E5-6C5E80C8FDBA}.Release|Win32.ActiveCfg = Release|Win32
+		{9CB5347B-454E-43EA-A7E5-6C5E80C8FDBA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+ADMIN.DLL/Debug/
+ADMIN.DLL/ReleaseMinDependency/
+*.tlh
+*.tli
+*.APS
+*.CLW
+*.ncb
+*.opt
+*.plg
+*.obj
+*.scc

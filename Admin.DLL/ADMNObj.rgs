@@ -1,0 +1,24 @@
+HKCR
+{
+	ADMNObj.ADMNObj.1 = s 'ADMNObj Class'
+	{
+		CLSID = s '{F4E06E56-62AB-4732-AF44-9E24CD9F0C66}'
+	}
+	ADMNObj.ADMNObj = s 'ADMNObj Class'
+	{
+		CurVer = s 'ADMNObj.ADMNObj.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F4E06E56-62AB-4732-AF44-9E24CD9F0C66} = s 'ADMNObj Class'
+		{
+			ProgID = s 'ADMNObj.ADMNObj.1'
+			VersionIndependentProgID = s 'ADMNObj.ADMNObj'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+// ADMN.idl : IDL source for ADMN.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ADMN.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(51FA7D21-82F3-11D2-A9BC-444553540000),
+		dual,
+		helpstring("IADMNObj Interface"),
+		pointer_default(unique)
+	]
+	interface IADMNObj : IDispatch
+	{
+		[id(1), helpstring("method SetParent")] HRESULT SetParent(long pParent);
+		[id(2), helpstring("method Initialize")] HRESULT Initialize(int nAppCode,BSTR bstrProfile,long lUserID, BSTR bstrODBC, long lLanguage, BSTR bstrInitModule);
+		[id(3), helpstring("method SetLanguage")] HRESULT SetLanguage(BOOL bArabic);
+
+		[id(12), helpstring("method CloseAll")] HRESULT CloseAll();
+		[id(13), helpstring("method SetModal")] HRESULT SetModal(BOOL bModalVal);
+		[id(22), helpstring("method GetConnectionString")] HRESULT GetConnectionString([out] BSTR* bstrConnection);
+		[id(23), helpstring("method GetUserName")] HRESULT GetUserName(BSTR* bstrName);
+		[id(24), helpstring("method GetLanguage")] HRESULT GetLanguage([out,retval] BOOL* bArabic);
+		[id(27), helpstring("method ShowScreenFromAttachment")] HRESULT ShowScreenFromAttachment(BSTR bstrAttachmentFile);
+		[id(31), helpstring("method SetFormRect")] HRESULT SetFormRect(int nLeft, int nTop, int nRight, int nBottom);
+		[id(32), helpstring("method ActivateForm")] HRESULT ActivateForm(BSTR bstrFormID,BOOL bByTag, int nSkipNo,BOOL bActivateLoadedScreen);
+		[id(34), helpstring("method SetFastSearchCriteria")] HRESULT SetFastSearchCriteria(BSTR bstrCriteria);
+		[id(35), helpstring("method GetUserID")] HRESULT GetUserID();
+		[id(36), helpstring("method DoFunction")] HRESULT DoFunction(int nCurrentCard,BSTR bstrTableName,int nStatus,BOOL bModal,BSTR bstrWhereClause);
+		[id(37), helpstring("method SetCurrentMenuItemID")] HRESULT SetCurrentMenuItemID(UINT unMenuID);
+		[id(38), helpstring("method GetDBType")] HRESULT GetDBType();
+		[id(40), helpstring("method SetRegHandleDB")] HRESULT SetRegHandleDB(LPDISPATCH lpRegHandleDB);
+
+		[id(41), helpstring("method HandOverSubjectType")] HRESULT HandOverSubjectType();
+		[id(42), helpstring("method OpenedHandOver")] HRESULT OpenedHandOver();
+		[id(43), helpstring("method ClosedHandOver")] HRESULT ClosedHandOver();
+		
+		[id(44), helpstring("method ShowDocumentLibrary")] HRESULT ShowDocumentLibrary();
+		[id(45), helpstring("method ShowDocumentTemplates")] HRESULT ShowDocumentTemplates();
+		[id(46), helpstring("method GenerateTender")] HRESULT GenerateTender(BSTR bstrTemplate,BSTR bstrTenderNo,BSTR bstrOutputFileName);
+		[id(47), helpstring("method GenerateContract")] HRESULT GenerateContract(BSTR bstrTemplate,BSTR bstrContractNo,BSTR bstrOutputFileName);
+		[id(48), helpstring("method ShowTenderTree")] HRESULT ShowTenderTree(BSTR bstrTenderNo,BOOL bLocked);
+		[id(49), helpstring("method ShowContractTree")] HRESULT ShowContractTree(BSTR bstrContractNo,BOOL bLocked);
+	};
+[
+	uuid(51FA7D14-82F3-11D2-A9BC-444553540000),
+	version(1.0),
+	helpstring("ADMN 1.0 Type Library")
+]
+library ADMNLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(F4E06E56-62AB-4732-AF44-9E24CD9F0C66),
+		helpstring("ADMNObj Class")
+	]
+	coclass ADMNObj
+	{
+		[default] interface IADMNObj;
+	};
+};
