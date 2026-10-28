@@ -5,7 +5,7 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Mon Oct 19 13:38:49 2020
+/* at Wed Oct 01 20:57:02 2025
  */
 /* Compiler settings for ADMN.idl:
     Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext

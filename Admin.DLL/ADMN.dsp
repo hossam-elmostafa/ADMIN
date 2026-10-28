@@ -292,13 +292,16 @@ SOURCE=.\ToolsListener.cpp
 
 SOURCE=.\ADMNObj.rgs
 # End Source File
+# Begin Source File
+
+SOURCE=.\ReportInfo.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ReportInfo.h
+# End Source File
 # End Target
 # End Project
-# Section ADMN : {BEF6E003-A874-101A-8BBA-00AA00300CAB}
-# 	2:5:Class:COleFont
-# 	2:10:HeaderFile:font.h
-# 	2:8:ImplFile:font.cpp
-# End Section
 # Section ADMN : {B0F95362-125E-11D0-B7EF-0080C77AF882}
 # 	2:5:Class:CHijriCalender
 # 	2:10:HeaderFile:hijricalender.h
@@ -307,4 +310,9 @@ SOURCE=.\ADMNObj.rgs
 # Section ADMN : {B0F95364-125E-11D0-B7EF-0080C77AF882}
 # 	2:21:DefaultSinkHeaderFile:hijricalender.h
 # 	2:16:DefaultSinkClass:CHijriCalender
+# End Section
+# Section ADMN : {BEF6E003-A874-101A-8BBA-00AA00300CAB}
+# 	2:5:Class:COleFont
+# 	2:10:HeaderFile:font.h
+# 	2:8:ImplFile:font.cpp
 # End Section

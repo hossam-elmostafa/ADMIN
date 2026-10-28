@@ -2,7 +2,7 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Mon Oct 19 13:38:49 2020
+/* at Wed Oct 01 20:57:02 2025
  */
 /* Compiler settings for ADMN.idl:
     Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext
@@ -167,6 +167,8 @@ EXTERN_C const IID IID_IADMNObj;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ShowContractTree( 
             BSTR bstrContractNo,
             BOOL bLocked) = 0;
+        
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ShowReportsInfo( void) = 0;
         
     };
     
@@ -333,6 +335,9 @@ EXTERN_C const IID IID_IADMNObj;
             BSTR bstrContractNo,
             BOOL bLocked);
         
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE __RPC_FAR *ShowReportsInfo )( 
+            IADMNObj __RPC_FAR * This);
+        
         END_INTERFACE
     } IADMNObjVtbl;
 
@@ -446,6 +451,9 @@ EXTERN_C const IID IID_IADMNObj;
 
 #define IADMNObj_ShowContractTree(This,bstrContractNo,bLocked)	\
     (This)->lpVtbl -> ShowContractTree(This,bstrContractNo,bLocked)
+
+#define IADMNObj_ShowReportsInfo(This)	\
+    (This)->lpVtbl -> ShowReportsInfo(This)
 
 #endif /* COBJMACROS */
 
@@ -773,6 +781,17 @@ void __RPC_STUB IADMNObj_ShowTenderTree_Stub(
 
 
 void __RPC_STUB IADMNObj_ShowContractTree_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IADMNObj_ShowReportsInfo_Proxy( 
+    IADMNObj __RPC_FAR * This);
+
+
+void __RPC_STUB IADMNObj_ShowReportsInfo_Stub(
     IRpcStubBuffer *This,
     IRpcChannelBuffer *_pRpcChannelBuffer,
     PRPC_MESSAGE _pRpcMessage,

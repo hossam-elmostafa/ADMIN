@@ -2,7 +2,7 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Mon Oct 19 13:38:49 2020
+/* at Wed Oct 01 20:57:02 2025
  */
 /* Compiler settings for ADMN.idl:
     Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext
@@ -28,7 +28,7 @@
 #include "ADMN.h"
 
 #define TYPE_FORMAT_STRING_SIZE   81                                
-#define PROC_FORMAT_STRING_SIZE   807                               
+#define PROC_FORMAT_STRING_SIZE   829                               
 
 typedef struct _MIDL_TYPE_FORMAT_STRING
     {
@@ -101,6 +101,38 @@ CLIENT_CALL_RETURN _RetVal;
     
 }
 
+/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IADMNObj_ShowReportsInfo_Proxy( 
+    IADMNObj __RPC_FAR * This)
+{
+CLIENT_CALL_RETURN _RetVal;
+
+
+#if defined( _ALPHA_ )
+    va_list vlist;
+#endif
+    
+#if defined( _ALPHA_ )
+    va_start(vlist,This);
+    _RetVal = NdrClientCall2(
+                  ( PMIDL_STUB_DESC  )&Object_StubDesc,
+                  (PFORMAT_STRING) &__MIDL_ProcFormatString.Format[806],
+                  vlist.a0);
+#elif defined( _PPC_ ) || defined( _MIPS_ )
+
+    _RetVal = NdrClientCall2(
+                  ( PMIDL_STUB_DESC  )&Object_StubDesc,
+                  (PFORMAT_STRING) &__MIDL_ProcFormatString.Format[806],
+                  ( unsigned char __RPC_FAR * )&This);
+#else
+    _RetVal = NdrClientCall2(
+                  ( PMIDL_STUB_DESC  )&Object_StubDesc,
+                  (PFORMAT_STRING) &__MIDL_ProcFormatString.Format[806],
+                  ( unsigned char __RPC_FAR * )&This);
+#endif
+    return ( HRESULT  )_RetVal.Simple;
+    
+}
+
 extern const USER_MARSHAL_ROUTINE_QUADRUPLE UserMarshalRoutines[1];
 
 static const MIDL_STUB_DESC Object_StubDesc = 
@@ -158,7 +190,8 @@ static const unsigned short IADMNObj_FormatStringOffsetTable[] =
     658,
     698,
     738,
-    772
+    772,
+    806
     };
 
 static const MIDL_SERVER_INFO IADMNObj_ServerInfo = 
@@ -183,7 +216,7 @@ static const MIDL_STUBLESS_PROXY_INFO IADMNObj_ProxyInfo =
     0
     };
 
-CINTERFACE_PROXY_VTABLE(33) _IADMNObjProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(34) _IADMNObjProxyVtbl = 
 {
     &IADMNObj_ProxyInfo,
     &IID_IADMNObj,
@@ -219,7 +252,8 @@ CINTERFACE_PROXY_VTABLE(33) _IADMNObjProxyVtbl =
     (void *)-1 /* IADMNObj::GenerateTender */ ,
     (void *)-1 /* IADMNObj::GenerateContract */ ,
     (void *)-1 /* IADMNObj::ShowTenderTree */ ,
-    IADMNObj_ShowContractTree_Proxy
+    IADMNObj_ShowContractTree_Proxy ,
+    IADMNObj_ShowReportsInfo_Proxy
 };
 
 
@@ -254,6 +288,7 @@ static const PRPC_STUB_FUNCTION IADMNObj_table[] =
     NdrStubCall2,
     NdrStubCall2,
     NdrStubCall2,
+    NdrStubCall2,
     NdrStubCall2
 };
 
@@ -261,7 +296,7 @@ CInterfaceStubVtbl _IADMNObjStubVtbl =
 {
     &IID_IADMNObj,
     &IADMNObj_ServerInfo,
-    33,
+    34,
     &IADMNObj_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };
@@ -1408,6 +1443,33 @@ static const MIDL_PROC_FORMAT_STRING __MIDL_ProcFormatString =
 			NdrFcShort( 0x18 ),	/* Alpha Stack size/offset = 24 */
 #endif
 /* 804 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Procedure ShowReportsInfo */
+
+/* 806 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 808 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 812 */	NdrFcShort( 0x21 ),	/* 33 */
+#ifndef _ALPHA_
+/* 814 */	NdrFcShort( 0x8 ),	/* x86, MIPS, PPC Stack size/offset = 8 */
+#else
+			NdrFcShort( 0x10 ),	/* Alpha Stack size/offset = 16 */
+#endif
+/* 816 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 818 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 820 */	0x4,		/* Oi2 Flags:  has return, */
+			0x1,		/* 1 */
+
+	/* Return value */
+
+/* 822 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+#ifndef _ALPHA_
+/* 824 */	NdrFcShort( 0x4 ),	/* x86, MIPS, PPC Stack size/offset = 4 */
+#else
+			NdrFcShort( 0x8 ),	/* Alpha Stack size/offset = 8 */
+#endif
+/* 826 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0

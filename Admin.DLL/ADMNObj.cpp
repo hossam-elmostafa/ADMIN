@@ -6,6 +6,7 @@
 #include "ADMNapp.h"
 #include "ToolsListener.h"
 #include "HandOver.h"
+#include "ReportInfo.h"
 #include "DocLib.h"
 
 #define	SILENTPOLYDBRECORDSET				4
@@ -171,7 +172,7 @@ STDMETHODIMP CADMNObj::Initialize(int nAppCode, BSTR bstrProfile,long lUserID, B
 		SetSystemPath();
 		CreateConnectionString();
 		long lRetVal=0;
-		lRetVal = m_pADMNSYSPolyDb->DBInit(DB_ACCESS,m_strSystemPath,m_strSystemPath,m_AppCode,-1,m_strHelpFileName,m_strODBC,m_strCurrentProfile);
+		lRetVal = m_pADMNSYSPolyDb->DBInit(DB_ACCESS,m_strSystemPath,m_strSystemPath,m_AppCode,lUserID,m_strHelpFileName,m_strODBC,m_strCurrentProfile);
 		m_strLoginUserName = m_Connection.m_pPrivConnection->GetUserLoginName(m_User);
 		m_strUserFullName  = m_Connection.m_pPrivConnection->GetUserFullName(m_User);
 	}
@@ -188,6 +189,9 @@ STDMETHODIMP CADMNObj::SetSystemPath()
 	AFX_MANAGE_STATE(AfxGetStaticModuleState())
 
 	m_Connection.m_pSetupConnection->SetApplicationInfo(m_AppCode,m_strCurrentProfile);
+	m_Connection.m_pPrivConnection->SetApplicationInfo(m_AppCode,m_strCurrentProfile);
+	m_Connection.m_pSecurityConnection->SetApplicationInfo(m_AppCode,m_strCurrentProfile);
+
 	m_strSystemPath = m_Connection.m_pSetupConnection->GetSystemDBName();
 	m_strServerName = m_Connection.m_pSetupConnection->GetSQLServerMachineName();
 
@@ -262,6 +266,9 @@ int CADMNObj::DoFunction(int nCurrentCard,CString strTableName,int nStatus,BOOL 
 
 	else if (strTableName=="VWCPMS_TNDRLIBSBCNTNT")
 		ShowLibrarySubs(strCriteria,strComesFrom,m_strLibrarySubsScreenDefauls);
+
+	else if (strTableName=="CMN_REPINFO")
+		ShowReportsInfo();
 
 	m_strScreenDefauls = "";
 	m_bModalPolyDb=FALSE;
@@ -726,5 +733,16 @@ STDMETHODIMP CADMNObj::ShowContractTree(BSTR bstrContractNo,BOOL bLocked)
 	
 	CDocLib *pDocLib=new CDocLib(pCategory);
 	pDocLib->ShowContractTree(bstrContractNo,bLocked);
+	return S_OK;
+}
+
+STDMETHODIMP CADMNObj::ShowReportsInfo()
+{
+	CCategory *pCategory=MakeCategory();
+	if(pCategory==NULL)
+		return S_FALSE;
+	
+	CReportInfo *pReportInfo=new CReportInfo(pCategory);
+	pReportInfo->ShowReportsInfo();
 	return S_OK;
 }

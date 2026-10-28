@@ -62,6 +62,7 @@ public:
 	STDMETHOD(GenerateContract)(BSTR bstrTemplate,BSTR bstrContractNo,BSTR bstrOutputFileName);
 	STDMETHOD(ShowTenderTree)(BSTR bstrTenderNo,BOOL bLocked);
 	STDMETHOD(ShowContractTree)(BSTR bstrContractNo,BOOL bLocked);
+	STDMETHOD(ShowReportsInfo)();
 
 
 public:
@@ -152,7 +153,6 @@ protected:
 						m_bModalEnv;
 	BOOL				m_bRecodingEnabled,
 						m_bWaitingForExportedMenuID;
-	CConnection			m_Connection;
 	CString				m_strODBC;
 	CDongleListen		*m_DongleListen;
 	int					m_nCodeID,
@@ -168,6 +168,7 @@ protected:
 	_FNotepadObjPtr		m_pNotepadeObj;
 
 public:
+	CConnection			m_Connection;
 	long				m_AppCode;
 	static int			m_nCurrentDBEngine;
 	static BOOL			m_bHijri,

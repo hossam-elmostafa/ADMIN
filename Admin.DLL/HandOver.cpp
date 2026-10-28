@@ -72,6 +72,10 @@ void CHandOver::OnScreenReady(LPCTSTR Form_Tag)
 	CString strFormTag(Form_Tag);
 	if (strFormTag == "HO_O")
 	{
+		CString strApp;
+		strApp.Format("%ld",m_pCategory->m_lAppCode);
+		m_pADMNPolyDb->FieldSetAttribSingle("HO_APPCODE", "", -1, "", "","" , strApp, -1,"","","","","",-1,-1,"");
+
 		// Set the logged in user in HOEmp 
         m_pADMNPolyDb->FieldSetAttribSingle("HO_HOEMP", "", -1, "", "","" , m_strHOEmpCode, -1,"","","","","",-1,-1,"");
 		m_pADMNPolyDb->FieldSetAttribSingle("HOEMP_NAME", "", -1, "", "","" , m_strHOEmpName, -1,"","","","","",-1,-1,"");
@@ -98,7 +102,6 @@ long CHandOver::ButtonClicked(LPCTSTR Caption, LPCTSTR Table_Name, LPCTSTR Maste
 			strMessage = "Are you sure";
 		else
 			strMessage = "Â· √‰  „ √ﬂœø";
-
 
 		if (MessageBox(NULL,strMessage,"Admin Module",MB_YESNOCANCEL | MB_ICONQUESTION | MB_TASKMODAL) == IDYES)
 		{

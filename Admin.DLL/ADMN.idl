@@ -45,6 +45,8 @@ import "ocidl.idl";
 		[id(47), helpstring("method GenerateContract")] HRESULT GenerateContract(BSTR bstrTemplate,BSTR bstrContractNo,BSTR bstrOutputFileName);
 		[id(48), helpstring("method ShowTenderTree")] HRESULT ShowTenderTree(BSTR bstrTenderNo,BOOL bLocked);
 		[id(49), helpstring("method ShowContractTree")] HRESULT ShowContractTree(BSTR bstrContractNo,BOOL bLocked);
+
+		[id(50), helpstring("method ShowReportsInfo")] HRESULT ShowReportsInfo();
 	};
 [
 	uuid(51FA7D14-82F3-11D2-A9BC-444553540000),
